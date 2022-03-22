@@ -22,3 +22,5 @@ I also assumed that when the number of trees was not an integer, it was invalid.
 
 The dataset is relatively large and takes a lot of front-end processing to display.  
 Therefore, should I change the api, I would make it already aggregate the data by day before sending it to the front-end (which would make the data change from +- 300.000 points to less than 1000).
+
+Given more time, I would also change the way I handle the x axis scale, to show a different granularity based on the zoom level (for instance, showing months rather than days when viewing a whole year);

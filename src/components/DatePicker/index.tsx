@@ -29,7 +29,7 @@ const DatePicker = ({
   setEndDate,
 }: DatePickerProps) => {
   return (
-    <Draggable defaultPosition={{ x: 0, y: 0 }} bounds="parent">
+    <Draggable bounds="parent">
       <DatePickerContainer>
         <div>
           <div>Display from:</div>
@@ -39,7 +39,7 @@ const DatePicker = ({
             endDate={endDate}
             onChange={setStartDate}
             selected={startDate}
-            minDate={new Date("01/01/2019")}
+            minDate={new Date("07/01/2019")}
             maxDate={endDate}
           />
         </div>

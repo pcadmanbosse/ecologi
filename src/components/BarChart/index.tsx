@@ -19,6 +19,7 @@ import DatePicker from "../DatePicker";
 import buildBarChartConfig from "./buildBarChartConfig";
 import buildTreeCountDatasets from "./buildTreeCountDatasets";
 import buildTreeCountLabels from "./buildTreeCountLabels";
+import styled from "styled-components";
 
 ChartJS.register(
   CategoryScale,
@@ -32,8 +33,13 @@ ChartJS.register(
   Legend
 );
 
+const ChartContainer = styled("div")`
+  height: 95%;
+  width: 95%;
+`;
+
 const Chart = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date("01/01/2022"));
   const [endDate, setEndDate] = useState(new Date());
   const { data, loading } = useContext(TreeDataContext);
   const [chartOptions, setChartOptions] = useState<any>(
@@ -60,7 +66,7 @@ const Chart = () => {
   }
 
   return (
-    <>
+    <ChartContainer>
       <DatePicker
         startDate={startDate}
         setStartDate={setStartDate}
@@ -68,7 +74,7 @@ const Chart = () => {
         setEndDate={setEndDate}
       />
       <Bar options={chartOptions} data={{ labels, datasets }} />
-    </>
+    </ChartContainer>
   );
 };
 
